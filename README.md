@@ -33,36 +33,60 @@ Este tipo de ficheiro apresenta a seguinte estrutura:
 }
 ```
 
-Esta análise consiste em verificar se o ficheiro está bem formado, ou seja, se respeita a estrutura apresentada acima.
-
-Este programa deve começar por pedir ao usuário informações sobre o tamanho da stack que será utilizada para a análise sintática. O que deve ser feito através da seguinte mensagem: `Informe o tamanho da stack: `
-
-Em seguida, um menu deve ser apresentado ao utilizador com as seguintes opções:
+Seu programa começa por apresentar um menu ao utilizador com as seguintes opções:
 
 * `1 - Analise sintatica`
 * `2 - Mostrar stack de simbolos`
 * `3 - Sair`
 
----
+### Requisitos:
 
-A opção `1 - Analise sintatica` deve permitir ao utilizador escolher um ficheiro no formato JSON para realizar a análise sintática. O programa deve verificar se o ficheiro existe e se está bem formado. Caso o ficheiro esteja bem formado, deve ser apresentada a seguinte mensagem: `FBF - Ficheiro bem formado!` e, caso contrário, deve ser apresentada a seguinte mensagem: `FMF - Ficheiro mal formado!`
-
----
-
-A opção `2 - Mostrar stack de simbolos` deve permitir ao utilizador visualizar o conteúdo da stack de símbolos. Caso a stack esteja vazia, deve ser apresentada a seguinte mensagem: `A stack está vazia!` e, caso contrário, deve ser apresentada a seguinte mensagem: `A stack contem os seguintes símbolos: ` e, em seguida, os símbolos que estão na stack.
+A análise sintática deve ser realizada pelo uso de `stacks` (pilhas) que devem ser capazes de efetuar as operações básicas dessa estrutura de dados como `push`, ,`pop`, `is_empty` (verificar se está vazia), `print` (imprimir a stack no ecrã).
 
 ---
 
-A opção `3 - Sair` deve permitir ao utilizador sair do programa.
+### Opção 1:
 
----
+A opção `1 - Analise sintatica` deve começar por pedir ao usuário informações sobre o tamanho da stack que será utilizada para a análise sintática. O que deve ser feito através da seguinte mensagem: `Informe o tamanho da stack: `
 
-Esta análise deve ser realizada pelo uso de `stacks` (pilhas) que devem ser capazes de efetuar as operações básicas dessa estrutura de dados como `push`, ,`pop`, `is_empty` (verificar se está vazia), `print` (imprimir a stack no ecrã).
+Em seguida, um ficheiro no formato JSON para realizar a análise sintática será lido. O programa deve verificar se o ficheiro existe e se está bem formado e exibir a mensagem apropriada para os seguintes casos:
 
-Desta forma, para este exercício, quando os símbolos que delimitam o escopo de um bloco de código "abrirem", isto é ao encontrar os símbolos `{` e `[` realizam-se as seguintes operações:
+- `FBF - Ficheiro bem formado!` se o ficheiro estiver bem formado
+- `FMF - Ficheiro mal formado!` caso contrário
+
+Desta forma, quando os símbolos que delimitam o escopo de um bloco de código "abrirem", isto é ao encontrar os símbolos `{` e `[` realizam-se as seguintes operações:
 
 * `push` do símbolo `{` ou `[` na stack
 
 Quando for encontrado um símbolo que fecha um bloco de código, isto é, `}` ou `]`, deve ser efetuada a seguinte operação:
 
 * `pop` do símbolo `{` ou `[` com o indicativo desta operaçao no ecrã no seguinte formato: `pop {` ou `pop [`
+
+### Erros:
+
+Quando, durante a execução **desta opção** no programa, ocorrerem os seguintes erros:
+
+- `push` e a `stack` estiver com sua **capacidade esgotada**, imprima `erro 01: stack overflow!` e volte ao menu principal.
+- `pop` e a `stack` estiver **vazia**, imprima `erro 02: stack underflow!` e volte ao menu principal.
+
+---
+
+### Opção 2:
+
+A opção `2 - Mostrar stack de simbolos` deve começar por pedir ao usuário informações sobre o tamanho da stack que será utilizada para a análise sintática. O que deve ser feito através da seguinte mensagem: `Informe o tamanho da stack: `
+
+Em seguida, deve permitir ao utilizador visualizar o conteúdo da stack de símbolos.
+
+A stack de símbolos vai ser composta por todos os símbolos `{`, `}`, `[`, `]`, `:` e `,` que foram encontrados no ficheiro `JSON`.
+
+Caso a stack esteja vazia, deve ser apresentada a seguinte mensagem: `Stack vazia!` e, caso contrário, deve ser apresentada a seguinte mensagem: `Stack: ` e, em seguida, os símbolos que estão na stack.
+
+---
+
+### Opção 3:
+
+A opção `3 - Sair` deve permitir ao utilizador sair do programa.
+
+---
+
+---
