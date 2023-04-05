@@ -100,3 +100,10 @@ A opção `3 - Sair` deve permitir ao utilizador sair do programa.
 - Organizar e modularizar seu código fazendo o uso de funções
 - Atenção para a exigência de leitura da **dimensão da stack**
 - Apenas a operação de `pop` está a exigir a impressão no **console**, mas em fase de desenvolvimento pode ser útil imprimir o conteúdo da stack a cada operação.
+
+# TODO:
+
+- [ ] Adicionar exemplo de execução do exercício
+- [ ] Adicionar mais exemplos de ficheiro JSON
+- [ ] Adicionar exemplos de casos de teste com e sem erros
+- [ ] Obter feedback com demais professores
