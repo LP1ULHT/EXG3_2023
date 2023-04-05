@@ -2,7 +2,7 @@
 
 Exercício em Grupo 3 - Analisador sintático
 
-### Descrição
+## Descrição
 
 Escreva um programa em C que realiza a análise sintática de um ficheiro no formato [JavaScript Object Notation - JSON](https://pt.wikipedia.org/wiki/JSON "JSON - Wikipedia").
 
@@ -39,7 +39,13 @@ Seu programa começa por apresentar um menu ao utilizador com as seguintes opç�
 * `2 - Mostrar stack de simbolos`
 * `3 - Sair`
 
-### Requisitos:
+---
+
+# Requisitos:
+
+O código deve compilar sem erros ou *warnings* utilizando o **`gcc`** com as seguintes flags:
+
+- `-g -Wvla -Wall -Wpedantic -Wextra -Wdeclaration-after-statement`
 
 A análise sintática deve ser realizada pelo uso de `stacks` (pilhas) que devem ser capazes de efetuar as operações básicas dessa estrutura de dados como `push`, ,`pop`, `is_empty` (verificar se está vazia), `print` (imprimir a stack no ecrã).
 
@@ -49,7 +55,7 @@ A análise sintática deve ser realizada pelo uso de `stacks` (pilhas) que devem
 
 A opção `1 - Analise sintatica` deve começar por pedir ao usuário informações sobre o tamanho da stack que será utilizada para a análise sintática. O que deve ser feito através da seguinte mensagem: `Informe o tamanho da stack: `
 
-Em seguida, um ficheiro no formato JSON para realizar a análise sintática será lido. O programa deve verificar se o ficheiro existe e se está bem formado e exibir a mensagem apropriada para os seguintes casos:
+Em seguida, um ficheiro no formato `JSON` para realizar a análise sintática será lido. O programa deve verificar se o ficheiro existe e se está bem formado e exibir a mensagem apropriada para os seguintes casos:
 
 - `FBF - Ficheiro bem formado!` se o ficheiro estiver bem formado
 - `FMF - Ficheiro mal formado!` caso contrário
@@ -60,7 +66,7 @@ Desta forma, quando os símbolos que delimitam o escopo de um bloco de código "
 
 Quando for encontrado um símbolo que fecha um bloco de código, isto é, `}` ou `]`, deve ser efetuada a seguinte operação:
 
-* `pop` do símbolo `{` ou `[` com o indicativo desta operaçao no ecrã no seguinte formato: `pop {` ou `pop [`
+* `pop` do símbolo `{` ou `[` com o indicativo desta operação no ecrã no seguinte formato: `pop {` ou `pop [`
 
 ### Erros:
 
@@ -89,4 +95,8 @@ A opção `3 - Sair` deve permitir ao utilizador sair do programa.
 
 ---
 
----
+# Dicas:
+
+- Organizar e modularizar seu código fazendo o uso de funções
+- Atenção para a exigência de leitura da **dimensão da stack**
+- Apenas a operação de `pop` está a exigir a impressão no **console**, mas em fase de desenvolvimento pode ser útil imprimir o conteúdo da stack a cada operação.
