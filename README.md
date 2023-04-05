@@ -101,8 +101,32 @@ A opção `3 - Sair` deve permitir ao utilizador sair do programa.
 - Atenção para a exigência de leitura da **dimensão da stack**
 - Apenas a operação de `pop` está a exigir a impressão no **console**, mas em fase de desenvolvimento pode ser útil imprimir o conteúdo da stack a cada operação.
 
-# TODO:
+# Exemplo de execução:
 
+- Exemplo 1
+```console
+1 - Analise sintatica
+2 - Mostrar stack de simbolos
+3 - Sair
+> 1
+Informe o tamanho da stack: 10
+pop [
+pop {
+pop {
+FBF - Ficheiro bem formado!
+1 - Analise sintatica
+2 - Mostrar stack de simbolos
+3 - Sair
+> 2
+Informe o tamanho da stack: 34
+Stack: }]}:,:,:,:{,}:,:,:,:{,}:,:,:,:{[:{
+1 - Analise sintatica
+2 - Mostrar stack de simbolos
+3 - Sair
+>3
+```
+# TODO:
+- [ ] Verificar a leitura de ficheiros com o Pandora
 - [ ] Adicionar exemplo de execução do exercício
 - [ ] Adicionar mais exemplos de ficheiro JSON
 - [ ] Adicionar exemplos de casos de teste com e sem erros
