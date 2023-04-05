@@ -127,7 +127,7 @@ Stack: }]}:,:,:,:{,}:,:,:,:{,}:,:,:,:{[:{
 ```
 # TODO:
 - [ ] Verificar a leitura de ficheiros com o Pandora
-- [ ] Adicionar exemplo de execução do exercício
+- [ ] Adicionar exemplos de execução do exercício
 - [ ] Adicionar mais exemplos de ficheiro JSON
 - [ ] Adicionar exemplos de casos de teste com e sem erros
 - [ ] Obter feedback com demais professores
