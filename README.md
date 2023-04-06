@@ -47,7 +47,7 @@ O código deve compilar sem erros ou *warnings* utilizando o **`gcc`** com as se
 
 - `-g -Wvla -Wall -Wpedantic -Wextra -Wdeclaration-after-statement`
 
-A análise sintática deve ser realizada pelo uso de `stacks` (pilhas) que devem ser capazes de efetuar as operações básicas dessa estrutura de dados como `push`, ,`pop`, `is_empty` (verificar se está vazia), `print` (imprimir a stack no ecrã).
+A análise sintática deve ser realizada pelo uso de `stacks` (pilhas) que devem ser capazes de efetuar as operações básicas dessa estrutura de dados como `push`, `pop`, `is_empty` (verificar se está vazia), `print` (imprimir a stack no ecrã).
 
 ---
 
@@ -108,7 +108,7 @@ A opção `3 - Sair` deve permitir ao utilizador sair do programa.
 1 - Analise sintatica
 2 - Mostrar stack de simbolos
 3 - Sair
-> 1
+>1
 Informe o tamanho da stack: 10
 pop [
 pop {
@@ -117,7 +117,7 @@ FBF - Ficheiro bem formado!
 1 - Analise sintatica
 2 - Mostrar stack de simbolos
 3 - Sair
-> 2
+>2
 Informe o tamanho da stack: 34
 Stack: }]}:,:,:,:{,}:,:,:,:{,}:,:,:,:{[:{
 1 - Analise sintatica
