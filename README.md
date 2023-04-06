@@ -43,9 +43,10 @@ Seu programa começa por apresentar um menu ao utilizador com as seguintes opç�
 
 # Requisitos:
 
-O código deve compilar sem erros ou *warnings* utilizando o **`gcc`** com as seguintes flags:
-
-- `-g -Wvla -Wall -Wpedantic -Wextra -Wdeclaration-after-statement`
+- O código apresentado deve ser bem indentado.
+- Tenha em atenção os nomes dados das variáveis, para que sejam indicadores daquilo que as mesmas vão conter.
+- O código deve compilar sem erros ou *warnings* utilizando o **`gcc`** com as seguintes flags:
+>- `-g -Wvla -Wall -Wpedantic -Wextra -Wdeclaration-after-statement`
 
 A análise sintática deve ser realizada pelo uso de `stacks` (pilhas) que devem ser capazes de efetuar as operações básicas dessa estrutura de dados como `push`, `pop`, `is_empty` (verificar se está vazia), `print` (imprimir a stack no ecrã).
 
