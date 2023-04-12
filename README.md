@@ -4,7 +4,7 @@ Exercício em Grupo 3 - Analisador sintático avançado
 
 ## Descrição
 
-Escreva um programa em C que realiza a análise sintática de um ficheiro no formato [JavaScript Object Notation - JSON](https://pt.wikipedia.org/wiki/JSON "JSON - Wikipedia").
+Escreva um programa em C que realiza a análise sintática avançada de um ficheiro no formato [JavaScript Object Notation - JSON](https://pt.wikipedia.org/wiki/JSON "JSON - Wikipedia").
 
 Este tipo de ficheiro apresenta a seguinte estrutura:
 
@@ -43,12 +43,11 @@ Seu programa começa por apresentar um menu ao utilizador com as seguintes opç�
 
 # Requisitos:
 
-- O código apresentado deve ser bem indentado.
-- Tenha em atenção os nomes dados das variáveis, para que sejam indicadores daquilo que as mesmas vão conter.
-- O código deve compilar sem erros ou *warnings* utilizando o **`gcc`** com as seguintes flags:
->- `-g -Wvla -Wall -Wpedantic -Wextra -Wdeclaration-after-statement`
+O código deve compilar sem erros ou *warnings* utilizando o **`gcc`** com as seguintes flags:
 
-A análise sintática deve ser realizada pelo uso de `stacks` (pilhas) que devem ser capazes de efetuar as operações básicas dessa estrutura de dados como `push`, `pop`, `is_empty` (verificar se está vazia), `print` (imprimir a stack no ecrã).
+- `-g -Wvla -Wall -Wpedantic -Wextra -Wdeclaration-after-statement`
+
+A análise sintática deve ser realizada pelo uso de `stacks` (pilhas) que devem ser capazes de efetuar as operações básicas dessa estrutura de dados como `push`, ,`pop`, `is_empty` (verificar se está vazia), `print` (imprimir a stack no ecrã).
 
 ---
 
@@ -56,12 +55,13 @@ A análise sintática deve ser realizada pelo uso de `stacks` (pilhas) que devem
 
 A opção `1 - Analise sintatica` deve começar por pedir ao usuário informações sobre o tamanho da stack que será utilizada para a análise sintática. O que deve ser feito através da seguinte mensagem: `Informe o tamanho da stack: `
 
-Em seguida, um ficheiro no formato `JSON` para realizar a análise sintática será lido. O programa deve verificar se o ficheiro existe e se está bem formado e exibir a mensagem apropriada para os seguintes casos:
+Em seguida, um ficheiro no formato `JSON` com nome `test.json` para realizar a análise sintática será lido. O programa deve verificar se o ficheiro existe e se está bem formado e exibir a mensagem apropriada para os seguintes casos:
 
 - `FBF - Ficheiro bem formado!` se o ficheiro estiver bem formado
 - `FMF - Ficheiro mal formado!` caso contrário
+- `FNE - Ficheiro não existe!` se o ficheiro não existir
 
-Desta forma, quando os símbolos que delimitam o escopo de um bloco de código "abrirem", isto é ao encontrar os símbolos `{` e `[` realizam-se as seguintes operações:
+Desta forma, quando for encontrado um dos símbolos que delimitam um bloco de código, isto é ao encontrar os símbolos `{` e `[` realizam-se as seguintes operações:
 
 * `push` do símbolo `{` ou `[` na stack
 
@@ -69,12 +69,14 @@ Quando for encontrado um símbolo que fecha um bloco de código, isto é, `}` ou
 
 * `pop` do símbolo `{` ou `[` com o indicativo desta operação no ecrã no seguinte formato: `pop {` ou `pop [`
 
+De modo semelhante deverá ser feito quando se encontra o inicio e fim de strings, quando se encontra o primeiro símbolo `"`  faz push do simbolo, e ao encontrar de novo outro simbolo igual faz pop na stack.
+
 ### Erros:
 
 Quando, durante a execução **desta opção** no programa, ocorrerem os seguintes erros:
 
-- `push` e a `stack` estiver com sua **capacidade esgotada**, imprima `erro 01: stack overflow!` e volte ao menu principal.
-- `pop` e a `stack` estiver **vazia**, imprima `erro 02: stack underflow!` e volte ao menu principal.
+- `push` e a `stack` estiver com sua **capacidade esgotada**, imprima `erro 01: stack overflow!` e imprime `FMF - Ficheiro mal formado!` e volta ao menu principal.
+- `pop` e a `stack` estiver **vazia**, imprima `erro 02: stack underflow!` e imprime `FMF - Ficheiro mal formado!` e volta ao menu principal.
 
 ---
 
@@ -109,16 +111,19 @@ A opção `3 - Sair` deve permitir ao utilizador sair do programa.
 1 - Analise sintatica
 2 - Mostrar stack de simbolos
 3 - Sair
->1
+> 1
 Informe o tamanho da stack: 10
-pop [
-pop {
-pop {
+push {
+push {
+push [
+pop  ]
+pop  }
+pop  }
 FBF - Ficheiro bem formado!
 1 - Analise sintatica
 2 - Mostrar stack de simbolos
 3 - Sair
->2
+> 2
 Informe o tamanho da stack: 34
 Stack: }]}:,:,:,:{,}:,:,:,:{,}:,:,:,:{[:{
 1 - Analise sintatica
@@ -126,16 +131,28 @@ Stack: }]}:,:,:,:{,}:,:,:,:{,}:,:,:,:{[:{
 3 - Sair
 >3
 ```
-# Honestidade Académica
+- Exemplo 2
+```console
+1 - Analise sintatica
+2 - Mostrar stack de simbolos
+3 - Sair
+>1
+ Informe o tamanho da stack: 3
+push }
+push "
+pop  "
+push }
+push "
+pop  "
+push }
+push "
+pop  "
+push }
+erro 01: stack overflow!
+FMF - Ficheiro mal formado!
 
-Nesta disciplina, espera-se que cada aluno siga os mais altos padrões de honestidade académica. Trabalhos que sejam identificados como cópias serão anulados e os alunos envolvidos terão nota zero - quer tenham copiado, quer tenham deixado copiar.
-Para evitar situações deste género, recomendamos aos alunos que nunca partilhem ou mostrem o seu código.
-A decisão sobre se um trabalho é uma cópia cabe exclusivamente aos docentes da unidade curricular.
-Os alunos são encorajados a discutir os problemas com outros alunos mas não deverão, no entanto, copiar códigos, documentação e relatórios de outros alunos. Em nenhuma circunstância deverão partilhar os seus próprios códigos, documentação e relatórios. De facto, não devem sequer deixar códigos, documentação e relatórios em computadores de uso partilhado.
-
-# TODO:
-- [ ] Verificar a leitura de ficheiros com o Pandora
-- [ ] Adicionar exemplos de execução do exercício
-- [ ] Adicionar mais exemplos de ficheiro JSON
-- [ ] Adicionar exemplos de casos de teste com e sem erros
-- [ ] Obter feedback com demais professores
+1 - Analise sintatica
+2 - Mostrar stack de simbolos
+3 - Sair
+>3
+```
