@@ -111,7 +111,7 @@ A opção `3 - Sair` deve permitir ao utilizador sair do programa.
 1 - Analise sintatica
 2 - Mostrar stack de simbolos
 3 - Sair
-> 1
+>1
 Informe o tamanho da stack: 10
 push {
 push {
@@ -123,7 +123,7 @@ FBF - Ficheiro bem formado!
 1 - Analise sintatica
 2 - Mostrar stack de simbolos
 3 - Sair
-> 2
+>2
 Informe o tamanho da stack: 34
 Stack: }]}:,:,:,:{,}:,:,:,:{,}:,:,:,:{[:{
 1 - Analise sintatica
