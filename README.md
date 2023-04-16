@@ -123,7 +123,6 @@ FBF - Ficheiro bem formado!
 2 - Mostrar stack de simbolos
 3 - Sair
 > 2
-Informe o tamanho da stack: 34
 Stack: }]}:,:,:,:{,}:,:,:,:{,}:,:,:,:{[:{
 1 - Analise sintatica
 2 - Mostrar stack de simbolos
