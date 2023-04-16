@@ -53,9 +53,9 @@ A análise sintática deve ser realizada pelo uso de `stacks` (pilhas) que devem
 
 ### Opção 1:
 
-A opção `1 - Analise sintatica` deve começar por pedir ao usuário informações sobre o tamanho da stack que será utilizada para a análise sintática. O que deve ser feito através da seguinte mensagem: `Informe o tamanho da stack: `
+A opção `1 - Analise sintatica` deve começar por pedir ao utilizador informações sobre o tamanho da stack que será utilizada para a análise sintática. O que deve ser feito através da seguinte mensagem: `Informe o tamanho da stack: `
 
-Em seguida, um ficheiro no formato `JSON` com nome `test.json` para realizar a análise sintática será lido. O programa deve verificar se o ficheiro existe e se está bem formado e exibir a mensagem apropriada para os seguintes casos:
+Em seguida, o programa dever perguntar qual o nome do ficheiro no formato `JSON` para realizar a análise sintática será lido, fazendo a pergunta `Informe o nome do ficheiro a analisar:`. O programa deve verificar se o ficheiro existe e se está bem formado e exibir a mensagem apropriada para os seguintes casos:
 
 - `FBF - Ficheiro bem formado!` se o ficheiro estiver bem formado
 - `FMF - Ficheiro mal formado!` caso contrário
@@ -82,13 +82,11 @@ Quando, durante a execução **desta opção** no programa, ocorrerem os seguint
 
 ### Opção 2:
 
-A opção `2 - Mostrar stack de simbolos` deve começar por pedir ao usuário informações sobre o tamanho da stack que será utilizada para a análise sintática. O que deve ser feito através da seguinte mensagem: `Informe o tamanho da stack: `
-
-Em seguida, deve permitir ao utilizador visualizar o conteúdo da stack de símbolos.
+A opção deve permitir ao utilizador visualizar o conteúdo da stack de símbolos.
 
 A stack de símbolos vai ser composta por todos os símbolos `{`, `}`, `[`, `]`, `:` e `,` que foram encontrados no ficheiro `JSON`.
 
-Caso a stack esteja vazia, deve ser apresentada a seguinte mensagem: `Stack vazia!` e, caso contrário, deve ser apresentada a seguinte mensagem: `Stack: ` e, em seguida, os símbolos que estão na stack.
+Caso a stack esteja vazia ou nao for feito a analise sintatica, deve ser apresentada a seguinte mensagem: `Stack vazia!` e, caso contrário, deve ser apresentada a seguinte mensagem: `Stack: ` e, em seguida, os símbolos que estão na stack.
 
 ---
 
@@ -111,8 +109,9 @@ A opção `3 - Sair` deve permitir ao utilizador sair do programa.
 1 - Analise sintatica
 2 - Mostrar stack de simbolos
 3 - Sair
->1
+> 1
 Informe o tamanho da stack: 10
+Informe o nome do ficheiro a analisar: experiencia.json
 push {
 push {
 push [
@@ -123,7 +122,7 @@ FBF - Ficheiro bem formado!
 1 - Analise sintatica
 2 - Mostrar stack de simbolos
 3 - Sair
->2
+> 2
 Informe o tamanho da stack: 34
 Stack: }]}:,:,:,:{,}:,:,:,:{,}:,:,:,:{[:{
 1 - Analise sintatica
@@ -137,7 +136,8 @@ Stack: }]}:,:,:,:{,}:,:,:,:{,}:,:,:,:{[:{
 2 - Mostrar stack de simbolos
 3 - Sair
 >1
- Informe o tamanho da stack: 3
+Informe o tamanho da stack: 3
+Informe o nome do ficheiro a analisar: experiencia.json
 push }
 push "
 pop  "
