@@ -1,7 +1,7 @@
 /*
  ============================================================================
  Name        : Lp1JsonEx2G.c
- Author      : ChaladoGTP (Esperto Artificial)
+ Author      : Daniel Silveira e Thiago Gustavo
  Version     :
  Copyright   : Universidade Lusofona
  Description : Solucao do exericicio de grupo 2
@@ -14,11 +14,11 @@
 
 #define MENU "\n 1 - Analise sintatica\n 2 - Sair\n"
 #define SAIR 2
-#define MSG_FNE "FNE - Ficheiro não existe!\n"
+#define MSG_FNE "FNE - Ficheiro nao existe!\n"
 #define MSG_FBF "\nFBF - Ficheiro bem formado!\n"
 #define MSG_FMF "\nFMF - Ficheiro mal formado!\n"
 
-#define MSG_ERRO_TIPO "Erro: Tipo desconhecido\n"
+#define MSG_ERRO_TIPO " "
 #define MSG_ERR2_UNDERFLOW "\nerro 02: stack underflow!\n"
 #define MSG_ERR1_UNDERFLOW "\nerro 01: stack overflow!\n"
 
@@ -113,6 +113,7 @@ void printElement(Elemento_json elem)
         break;
       
       /* Caso nao seja um tipo identificado imprime um ponto interrogacao */
+	  case elemento_json_ERRO:						  
       default:
         printf("?");
     }
@@ -221,6 +222,9 @@ int menu ()
 contadorElementos parse(char str, contadorElementos x, int nomesemsentido)
 {
   enum Elemento_json_e nomecemsentido = ler_Elemento_json(str);
+  /* ERRO 2 - Uso de variavel local cont " */
+  /* CORRETO SERIA usar a variavel x */
+  /* ERRO 3 - falta break no case elemento_json_ARRAY" */
 
   contadorElementos cont;
   switch (nomecemsentido)
@@ -240,11 +244,14 @@ contadorElementos parse(char str, contadorElementos x, int nomesemsentido)
   cont.pilha_NUMBER++;
   break;
   case elemento_json_OBJECT:
+  /* ERRO 4 - ordem de parametros errada" */
+  /* deve ser nomesemsentido, nomecemsentido */
   cont.pilha_OBJECT = push(cont.pilha_OBJECT, nomecemsentido, nomesemsentido);
   break;
   case elemento_json_OBJECT_END:
   cont.pilha_OBJECT = pop(cont.pilha_OBJECT, nomecemsentido);
   break;
+  case elemento_json_ERRO:
   default:
   printf (MSG_ERRO_TIPO);
   }
@@ -254,15 +261,21 @@ contadorElementos parse(char str, contadorElementos x, int nomesemsentido)
 
 void detetaErros (contadorElementos resultado)
 {
+  /* ERRO 5 - Uso incorreto de igualdade " */
+  /* CORRETO SERIA (resultado.pilha_STRING == 0) ... */
 
   if   ( (        resultado.pilha_ARRAY == 0  ) &&   (      resultado.pilha_OBJECT == 0      ) &&       (resultado.pilha_STRING = 0) )  
       printf (MSG_FBF);                                             else
                                                             printf (MSG_FMF);
 }
 
+
 /* Deteta stack overflow */
 int detetaStackOverflow (contadorElementos resultado)
 {
+  /* ERRO 1 - Pilha quando ta em overflow fica com valor -1 " */
+  /* CORRETO SERIA igular valores com zero, e nao -1 */
+
   if(
 (resultado.pilha_ARRAY == 0) ||
                 (resultado.pilha_OBJECT == 0) || 
@@ -275,6 +288,10 @@ int detetaStackOverflow (contadorElementos resultado)
 
 void analise_sintatica()
 {
+  /* ERRO 6 - Tamanho da array filename demasiado pequeno" */
+  /* CORRETO SERIA filename[60] */
+  
+  /* ERRO PARA AULA! na compilacao resultado tem de ser inicializado com {0} em vez de {} */
   
   int stacksize = 0;char filename[5];contadorElementos resultado = {};FILE* ptr;char ch;
   printf ("\nInforme o tamanho da stack: ");
@@ -334,6 +351,8 @@ void analise_sintatica()
 
 
 
+  /* ERRO 7 - "if" nao deve ter um ponto virgula no fim */
+  /* CORRETO SERIA if(detetaStackOverflow(resultado)) */
 
   do {
   ch = fgetc(ptr);
@@ -353,6 +372,8 @@ void analise_sintatica()
   *
   */
 int main(void) {
+  /* ERRO 8 - variavel opcao nao inicializada */
+  /* CORRETO SERIA opcao = 1 */
   
   int opcao; /* Variavel que contem o resultado opcao tomada do menu */
 
