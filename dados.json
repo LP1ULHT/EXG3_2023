@@ -1,0 +1,22 @@
+{
+  "alunos": [
+    {
+      "nome": "João da Silva",
+      "idade": 18,
+      "curso": "Engenharia Informatica",
+      "matricula": "123456"
+    },
+    {
+      "nome": "Maria Souza",
+      "idade": 20,
+      "curso": "Licenciatura em Informatica e Gestao",
+      "matricula": "789012"
+    },
+    {
+      "nome": "Pedro Santos",
+      "idade": 19,
+      "curso": "Licenciatura em Informatica e Ensino",
+      "matricula": "345678"
+    }
+  ]
+}

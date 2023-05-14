@@ -1,0 +1,58 @@
+{
+  "alunos": [
+    {
+      "nome": "João da Silva",
+      "idade": 18,
+      "curso": "Engenharia Informatica",
+      "matricula": "123456"
+    },
+    {
+      "nome": "Maria Souza",
+      "idade": 20,
+      "curso": "Licenciatura em Informatica e Gestao",
+      "matricula": "789012"
+    },
+    {
+      "nome": "Pedro Santos",
+      "idade": 19,
+      "curso": "Licenciatura em Informatica e Ensino",
+      "matricula": "345678"
+    },
+    {
+      "nome": "Juliana Oliveira",
+      "idade": 21,
+      "curso": "Engenharia Civil",
+      "matricula": "901234"
+    },
+    {
+      "nome": "Lucas Fernandes",
+      "idade": 22,
+      "curso": "Licenciatura em Direito",
+      "matricula": "567890"
+    },
+    {
+      "nome": "Carla Santos",
+      "idade": 20,
+      "curso": "Licenciatura em Biologia",
+      "matricula": "234567"
+    },
+    {
+      "nome": "Fernanda Costa",
+      "idade": 23,
+      "curso": "Licenciatura em Estudos Europeus e Relações Internacionais",
+      "matricula": "7890123"
+    },
+    {
+      "nome": "Ricardo Oliveira",
+      "idade": 21,
+      "curso": "Licenciatura em Ciências da Nutrição",
+      "matricula": "456789"
+    {,
+    {
+      "nome": "Larissa Pereira",
+      "idade": 20,
+      "curso": "Licenciatura em Engenharia e Gestão Industrial",
+      "matricula": "2345678"
+    }
+  ]
+}
