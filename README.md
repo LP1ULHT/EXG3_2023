@@ -59,15 +59,15 @@ Em seguida, o programa dever perguntar qual o nome do ficheiro no formato `JSON`
 
 - `FBF - Ficheiro bem formado!` se o ficheiro estiver bem formado
 - `FMF - Ficheiro mal formado!` caso contrário
-- `FNE - Ficheiro não existe!` se o ficheiro não existir
+- `FNE - Ficheiro nao existe!` se o ficheiro não existir
 
 Desta forma, quando for encontrado um dos símbolos que delimitam um bloco de código, isto é ao encontrar os símbolos `{` e `[` realizam-se as seguintes operações:
 
-* `push` do símbolo `{` ou `[` na stack
+* `push` do símbolo `{` ou `[` na stack, imprimindo no ecrã `push {` ou `push [`
 
 Quando for encontrado um símbolo que fecha um bloco de código, isto é, `}` ou `]`, deve ser efetuada a seguinte operação:
 
-* `pop` do símbolo `{` ou `[` com o indicativo desta operação no ecrã no seguinte formato: `pop {` ou `pop [`
+* `pop` do símbolo `}` ou `]`, imprimindo no ecrã no seguinte formato: `pop }` ou `pop ]`
 
 De modo semelhante deverá ser feito quando se encontra o inicio e fim de strings, quando se encontra o primeiro símbolo `"`  faz push do simbolo, e ao encontrar de novo outro simbolo igual faz pop na stack.
 
@@ -78,6 +78,7 @@ Quando, durante a execução **desta opção** no programa, ocorrerem os seguint
 - `push` e a `stack` estiver com sua **capacidade esgotada**, imprima `erro 01: stack overflow!` e imprime `FMF - Ficheiro mal formado!` e volta ao menu principal.
 - `pop` e a `stack` estiver **vazia**, imprima `erro 02: stack underflow!` e imprime `FMF - Ficheiro mal formado!` e volta ao menu principal.
 
+Nota: Existe um stack por elemento, neste caso temos duas stacks, uma para `[` e outro para `{`. 
 ---
 
 ### Opção 2:
@@ -100,7 +101,6 @@ A opção `3 - Sair` deve permitir ao utilizador sair do programa.
 
 - Organizar e modularizar seu código fazendo o uso de funções
 - Atenção para a exigência de leitura da **dimensão da stack**
-- Apenas a operação de `pop` está a exigir a impressão no **console**, mas em fase de desenvolvimento pode ser útil imprimir o conteúdo da stack a cada operação.
 
 # Exemplo de execução:
 
