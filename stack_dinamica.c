@@ -84,19 +84,45 @@ void exibir_pilha(Pilha* pilha) {
     printf("\n");
 }
 
+int tamanho_pilha(Pilha* pilha) {
+    /*
+    * Retorna o tamanho da pilha
+    */
+    int tamanho = 0;
+    No* atual = pilha->topo;
+    while (atual != NULL) {
+        tamanho++;
+        atual = atual->proximo;
+    }
+    return tamanho;
+}
+
 int main() {
     Pilha* pilha = criar_pilha();
 
     empilhar(pilha, 10);
     empilhar(pilha, 20);
     empilhar(pilha, 30);
+    empilhar(pilha, 40);
+    empilhar(pilha, 50);
+    empilhar(pilha, 60);
+    empilhar(pilha, 70);
+    empilhar(pilha, 80);
+    empilhar(pilha, 90);
+    
     exibir_pilha(pilha);
+    
+    printf("Elemento no topo: %d\n", topo(pilha));
 
     printf("Elemento desempilhado: %d\n", desempilhar(pilha));
+    
     printf("Elemento no topo: %d\n", topo(pilha));
+    
+    printf("Tamanho da pilha: %d\n", tamanho_pilha(pilha));
 
     exibir_pilha(pilha);
 
     free(pilha);
+
     return 0;
 }
