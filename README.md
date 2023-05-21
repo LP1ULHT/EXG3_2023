@@ -85,7 +85,7 @@ Nota: Existe um stack por elemento, neste caso temos duas stacks, uma para `[` e
 
 A opção deve permitir ao utilizador visualizar o conteúdo da stack de símbolos.
 
-A stack de símbolos vai ser composta por todos os símbolos `{`, `}`, `[`, `]`, `:` e `,` que foram encontrados no ficheiro `JSON`.
+A stack de símbolos vai ser composta por todos os símbolos `{`, `}`, `[`, `]`, `(`, `)` e `:` que foram encontrados no ficheiro `JSON`.
 
 Caso a stack esteja vazia ou nao for feito a analise sintatica, deve ser apresentada a seguinte mensagem: `Stack vazia!` e, caso contrário, deve ser apresentada a seguinte mensagem: `Stack: ` e, em seguida, os símbolos que estão na stack.
 
