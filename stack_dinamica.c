@@ -97,6 +97,40 @@ int tamanho_pilha(Pilha* pilha) {
     return tamanho;
 }
 
+void traverse_pilha(Pilha *pilha, int saltos){
+    /*
+    Traverse da pilha pelo numero de saltos
+    Se o numero de saltos for maior que o tamanho da pilha, exibe uma mensagem de erro e sai da funcao
+    Se o numero de saltos for menor que 0, exibe uma mensagem de erro e sai da funcao
+    Se o numero de saltos for igual a 0, exibe o elemento no topo da pilha
+    Se pilha estiver vazia, exibe uma mensagem de erro e sai da funcao
+    */
+
+    if (pilha_vazia(pilha)) {
+        printf("Pilha vazia!\n");
+        return;
+    }
+
+    if (saltos < 0) {
+        printf("Posicao invalida!\n");
+        return;
+    }
+
+    if (saltos > tamanho_pilha(pilha)) {
+        printf("Saltos maior que o tamanho da pilha!\n");
+        return;
+    }
+
+    No* atual = pilha->topo;
+
+    // traverse da pilha pelo salto
+    while(saltos > 0){
+        atual = atual->proximo++;
+        saltos--;
+    }
+    printf("%d ", atual->dado);
+}
+
 int main() {
     Pilha* pilha = criar_pilha();
 
