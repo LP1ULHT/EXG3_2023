@@ -353,6 +353,9 @@ Saltos maior que o tamanho da pilha!
 0 - Sair
 >
 ```
+- **Exemplo 3.4 (Saltos)**:
+
+![](saltos.png)
 
 ### Opção 0:
 
