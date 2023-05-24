@@ -366,9 +366,8 @@ A opção `0 - Sair` deve permitir ao utilizador sair do programa.
 # Dicas:
 
 - Organizar e modularizar seu código fazendo o uso de funções.
-- Usar a aritmética de ponteiros para efetuar os saltos pela stack na opção 3.
 - Para este exercício, não será considerado que foram fornecidas opções inválidas no menu principal, mas pode convir tratar tal caso.
-- O ficheiro [stack_dinamica.c](https://github.com/LP1ULHT/EXG3_2023/blob/main/stack_dinamica.c)
+- O ficheiro [stack_dinamica.c](https://github.com/LP1ULHT/EXG3_2023/blob/main/stack_dinamica.c) possui algumas funções já implementadas.
 - O site Python Tutor pode auxiliar na visualização do funcionamento do código [Python Tutor C](https://pythontutor.com/c.html#mode=edit)
   - Escolha em **C/C++ details:** `show memory addresses` para visualizar os endereços de memória.
 - Neste repositório há um video do funcionamento no Python Tutor em [funcionamento_stack_dinamica.mp4](https://github.com/LP1ULHT/EXG3_2023/blob/main/funcionamento_stack_dinamica.mp4)
