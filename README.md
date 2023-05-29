@@ -51,7 +51,7 @@ O código deve compilar sem erros ou *warnings* utilizando o **`gcc`** com as se
 
 - `-g -Wvla -Wall -Wpedantic -Wextra -Wdeclaration-after-statement`
 
-A análise sintática deve ser realizada pelo uso de `stacks` (pilhas) que devem ser capazes de efetuar as operações básicas dessa estrutura de dados como `push`, ,`pop`, `is_empty` (verificar se está vazia), `print` (imprimir a stack no ecrã).
+A análise sintática deve ser realizada pelo uso de `stacks` (pilhas) que devem ser capazes de efetuar as operações básicas dessa estrutura de dados como `push` ,`pop`, `is_empty` (verificar se está vazia), `print` (imprimir a stack no ecrã).
 
 ---
 
@@ -69,7 +69,7 @@ Desta forma, quando for encontrado um dos símbolos que delimitam um bloco de c�
 
 Quando for encontrado um símbolo que fecha um bloco de código, isto é, `}` ou `]`, deve ser efetuada a seguinte operação:
 
-* `pop` do símbolo `}` ou `]`, imprimindo no ecrã no seguinte formato: `pop }` ou `pop ]`
+* `pop` do símbolo ao encontrar o `}` ou `]` correspondente, imprimindo no ecrã no seguinte formato: `pop {` ou `pop [`
 
 ### Erros:
 
